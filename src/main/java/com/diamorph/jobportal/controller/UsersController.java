@@ -46,7 +46,7 @@ public class UsersController {
             return this.register(model);
         } else {
             usersService.addNew(users);
-            return "dashboard";
+            return "redirect:/dashboard/";
         }
     }
 
