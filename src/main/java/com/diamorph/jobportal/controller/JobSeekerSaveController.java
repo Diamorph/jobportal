@@ -50,7 +50,7 @@ public class JobSeekerSaveController {
             Optional<JobSeekerProfile> seekerProfile = jobSeekerProfileService.getOne(user.getUserId());
             JobPostActivity jobPostActivity = jobPostActivityService.getOne(id);
             if (seekerProfile.isPresent() && jobPostActivity != null) {
-                jobSeekerSave = new JobSeekerSave();
+                jobSeekerSave = new JobSeekerSave(); // prevent Optimistic Locking Failure in Hibernate
                 jobSeekerSave.setJob(jobPostActivity);
                 jobSeekerSave.setUserId(seekerProfile.get());
             } else {
