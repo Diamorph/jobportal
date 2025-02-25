@@ -22,7 +22,7 @@ public class RecruiterProfileService {
         this.usersRepository = usersRepository;
     }
 
-    public Optional<RecruiterProfile> getOne(Integer id) {
+    public Optional<RecruiterProfile> getOne(int id) {
         return recruiterProfileRepository.findById(id);
     }
 
